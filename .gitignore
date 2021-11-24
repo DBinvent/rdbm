@@ -1,0 +1,6 @@
+**/rdbm
+**/*.license
+/lib-licenses.txt
+/rdbm-unix-latest.tar.gz
+**/*.out
+**/*.org
