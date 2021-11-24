@@ -3,7 +3,7 @@ if [ $# -lt 1 ]; then
   echo "Run a test cases for Rumba[rdbm] in Postgres Docker container"
   echo "Example: $0 baseline"
   echo ""
-  echo "Test cases:"
+  echo "Available test cases:"
   ls -1 examples
   echo ""
   echo "Use '$0 <test case> psql' to keep container open"
@@ -23,7 +23,7 @@ if [ -f rdbm ]; then
 else
   echo "Install Rumba the rdbm"
   wget https://dev.dbinvent.com/dist/rdbm-unix-latest.tar.gz
-  tar xvf https://dev.dbinvent.com/dist/rdbm-unix-latest.tar.gz
+  tar xvf rdbm-unix-latest.tar.gz
   rdbm -V
 fi
 
@@ -37,6 +37,7 @@ if [ -n "$alreadystarted" ]; then
   docker rm $alreadystarted
 fi
 
+cd $(dirname $0)
 cp -t examples/$1 rdbm evaluation.license
 
 containerid=$(docker run --name rumba-test -v $(pwd)/examples/$1:/home/test -i -d -e POSTGRES_PASSWORD=pwd postgres)
