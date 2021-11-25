@@ -11,18 +11,18 @@ Every usecase perform migration and YAML & SQL dump to compare with expected res
 ## Usecases:
 
 1. [Baseline](examples/baseline/)  Test license and perform a self migration.
+2. [Create DB](examples/createdb/) Test Create User(role) and Database on demand.
 
-comming soon...
-
+   comming soon...
+ 
 3. [Simple migration](examples/simple/) 
 4. [Versioned migration](examples/versions/)
 5. [Tag and Status](examples/tag/)
 6. [StoredProc as Repeatable migration](examples/storedproc/)
 7. [Simple ETL](examples/simpleetl/)
 8. [ETL: mixes SQL and CSV](examples/etl/)
-9. [Create DB](examples/createdb/)
-10. [Dry Run](examples/dryrun/)
-11. [Log DB as Copy Deploment history journal to another DB](examples/logdb/)
+9. [Dry Run](examples/dryrun/)
+10. [Log DB as Copy Deploment history journal to another DB](examples/logdb/)
 
 Get a list of all available test cases:
 ```bash
