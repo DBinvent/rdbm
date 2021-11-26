@@ -10,3 +10,23 @@ database:
             - column:
                 name: extra
                 type: varchar(250)
+
+# as an example: this table has no changes:
+      - table:
+          tableName: test_table
+          columns:
+            - column:
+                name: id
+                type: serial
+                constraint:
+                  primaryKey: true
+                  nullable: false
+            - column:
+                name: test
+                type: varchar(250)
+            - column:
+                name: tr
+                type: int
+                constraint:
+                  foreignKey:
+                    references: test_ref_table
