@@ -1,7 +1,7 @@
 ---
 database:
   - schemaName: public
-    owner: $USER
+    owner: postgres
     tables:
       - table:
           tableName: rdbm_history
@@ -82,7 +82,7 @@ database:
                 constraint:
                   nullable: false
   - schemaName: test_schema
-    owner: $USER
+    owner: postgres
     tables:
       - table:
           tableName: test_table

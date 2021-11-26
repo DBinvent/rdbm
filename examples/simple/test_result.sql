@@ -1,5 +1,5 @@
 CREATE SCHEMA test_schema;
-ALTER SCHEMA test_schema OWNER TO $USER;
+ALTER SCHEMA test_schema OWNER TO postgres;
 CREATE TABLE public.rdbm_history (
     id integer NOT NULL,
     source character varying(250) NOT NULL,
@@ -19,7 +19,7 @@ CREATE TABLE public.rdbm_history (
     times integer DEFAULT 1 NOT NULL,
     size bigint DEFAULT 0 NOT NULL
 );
-ALTER TABLE public.rdbm_history OWNER TO $USER;
+ALTER TABLE public.rdbm_history OWNER TO postgres;
 CREATE SEQUENCE public.rdbm_history_id_seq
     AS integer
     START WITH 1
@@ -27,13 +27,13 @@ CREATE SEQUENCE public.rdbm_history_id_seq
     NO MINVALUE
     NO MAXVALUE
     CACHE 1;
-ALTER TABLE public.rdbm_history_id_seq OWNER TO $USER;
+ALTER TABLE public.rdbm_history_id_seq OWNER TO postgres;
 ALTER SEQUENCE public.rdbm_history_id_seq OWNED BY public.rdbm_history.id;
 CREATE TABLE test_schema.test_table (
     id integer NOT NULL,
     test character varying(250)
 );
-ALTER TABLE test_schema.test_table OWNER TO $USER;
+ALTER TABLE test_schema.test_table OWNER TO postgres;
 CREATE SEQUENCE test_schema.test_table_id_seq
     AS integer
     START WITH 1
@@ -41,7 +41,7 @@ CREATE SEQUENCE test_schema.test_table_id_seq
     NO MINVALUE
     NO MAXVALUE
     CACHE 1;
-ALTER TABLE test_schema.test_table_id_seq OWNER TO $USER;
+ALTER TABLE test_schema.test_table_id_seq OWNER TO postgres;
 ALTER SEQUENCE test_schema.test_table_id_seq OWNED BY test_schema.test_table.id;
 
 ALTER TABLE ONLY public.rdbm_history
