@@ -7,6 +7,7 @@ if [ $# -lt 1 ]; then
   ls -1 examples
   echo ""
   echo "Use '$0 <test case> psql' to keep container open"
+  echo "Or '$0 <test case> bash' to play with: 'rdbm help'"
   exit 1
 fi
 
@@ -21,13 +22,13 @@ set -e
 if [ -f rdbm ]; then
   echo "Use $(rdbm -V)"
 else
-  echo "Install Rumba the rdbm"
-  wget https://dev.dbinvent.com/dist/rdbm-unix-latest.tar.gz
+  echo "Pull Rumba[rdbm] from dbinvent.com"
+  wget https://www.dbinvent.com/dist/rdbm-unix-latest.tar.gz
   tar xvf rdbm-unix-latest.tar.gz
   rdbm -V
 fi
 
-echo "Starting Postgres in Docker container..."
+echo "Starting Postgres in the Docker container..."
 docker pull postgres
 
 alreadystarted=$(docker ps -a -f "name=rumba-test" -q)
@@ -58,14 +59,13 @@ echo "You can check results at examples/$1/*.out file(s)"
 if [ $# -eq 2 ]; then
   echo ""
   if [ $2 == "psql" ]; then
-    echo "Jump into Docker interactive PSQL console. Type '\q' to exit ..."
-    echo "Use: 'select * from rdbm_history;'"
+    echo "Jump into the Docker interactive PSQL console. Type '\q' to exit ..."
+    echo "Try to use: 'select * from rdbm_history;'"
     it="-h localhost -U postgres"
   fi
   if [ $2 == "bash" ]; then
-    echo "Jump into Docker interactive Bash console. Type 'exit' when done ..."
-    echo "Use: rdbm help"
-    echo "rdbm --dry_run=yes -c test.cfg  license"
+    echo "Jump into the Docker interactive Bash console. Type 'exit' when done ..."
+    echo "Try to use: 'rdbm help'"
     it="/home/test/bashrc"
   fi
   docker exec -it rumba-test $2 $it
