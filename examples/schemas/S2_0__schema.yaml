@@ -1,0 +1,12 @@
+database:
+  - schema:
+    schemaName: test_schema
+    owner: postgres
+    tables:
+      - table:
+          tableName: test_ref_table
+          columns:
+# we can just append column definition, OR show all field here
+            - column:
+                name: extra
+                type: varchar(250)

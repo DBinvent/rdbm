@@ -12,17 +12,18 @@ Every usecase perform migration and YAML & SQL dump to compare with expected res
 
 1. [Baseline](examples/baseline/)  Test license and perform a self migration.
 2. [Create DB](examples/createdb/) Test Create User(role) and Database on demand.
-3. [Simple migration](examples/simple/) Simple migration with tracking versioned SQL script
+3. [Simple migration](examples/simple/) Simple migration with tracking versioned YAML and SQL script
+4. [Versioned YAML schemas migration](examples/schemas/) Multiple YAML scripts with limit by defining target version 
 
    comming soon...
  
-4. [Versioned migration](examples/versions/) Multiple scripts with limit by defining target version 
-5. [StoredProc](examples/storedproc/) Repeatable migration 
-6. [Tag and Status](examples/tag/)
-7. [Simple ETL](examples/simpleetl/)
-8. [ETL: mixes SQL and CSV](examples/etl/)
-9. [Dry Run](examples/dryrun/)
-10. [Log DB](examples/logdb/)  Copy Deploment history journal to another DB
+5. [Versioned migration](examples/versions/) Multiple SQL scripts with limit by defining target version 
+6. [StoredProc](examples/storedproc/) Repeatable migration 
+7. [Tag and Status](examples/tag/)
+8. [Simple ETL](examples/simpleetl/)
+9. [ETL: mixes SQL and CSV](examples/etl/)
+10. [Dry Run](examples/dryrun/)
+11. [Log DB](examples/logdb/)  Copy Deploment history journal to another DB
 
 Get a list of all available test cases:
 ```bash
@@ -31,7 +32,7 @@ Get a list of all available test cases:
 ```
 
 
-## Run a test case with Docker:
+## Run a test case within a Docker container:
 ```bash
 ./test.sh baseline # or any other usecase your prefer to run
 
@@ -49,4 +50,5 @@ So, you can check generated tables and history journal.
 ./test.sh baseline bash
 
 ```
-Very useful to play with preconfigured rdbm app 
+Very useful to play with preconfigured rdbm app. Try: rdbm help
+
