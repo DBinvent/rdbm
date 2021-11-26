@@ -1,13 +1,14 @@
-# Rumba[rdbm] test case:  
+# Rumba[rdbm] test case: Simple migration
+
 
 
 ```
-../test.sh logdb
+../test.sh simple
 
 ```
 OR to keep console open for manual checkup
 ```
-../test.sh logdb psql
+../test.sh simple psql
 
 ```
 

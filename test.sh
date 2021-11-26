@@ -59,7 +59,7 @@ if [ $# -eq 2 ]; then
   echo ""
   if [ $2 == "psql" ]; then
     echo "Jump into Docker interactive PSQL console. Type '\q' to exit ..."
-    echo "Use: 'select * from rdbm_history'"
+    echo "Use: 'select * from rdbm_history;'"
     it="-h localhost -U postgres"
   fi
   if [ $2 == "bash" ]; then
