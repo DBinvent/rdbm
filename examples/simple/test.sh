@@ -1,7 +1,7 @@
 #!/bin/bash
 cd $(dirname $0)
 
-echo "Deploying history table as baseline migration:> /rdbm -c test.cfg table with params:"
+echo "Deploying YAML and SQL scripts:> /rdbm -c test.cfg migrate; with params:"
 cat test.cfg
 ./rdbm -c test.cfg migrate
 
