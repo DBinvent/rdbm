@@ -1,7 +1,7 @@
 ---
 database:
   - schemaName: public
-    owner: $USER
+    owner: postgres
     tables:
       - table:
           tableName: rdbm_history

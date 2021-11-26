@@ -17,7 +17,7 @@ CREATE TABLE public.rdbm_history (
     times integer DEFAULT 1 NOT NULL,
     size bigint DEFAULT 0 NOT NULL
 );
-ALTER TABLE public.rdbm_history OWNER TO $USER;
+ALTER TABLE public.rdbm_history OWNER TO postgres;
 CREATE SEQUENCE public.rdbm_history_id_seq
     AS integer
     START WITH 1
@@ -25,7 +25,7 @@ CREATE SEQUENCE public.rdbm_history_id_seq
     NO MINVALUE
     NO MAXVALUE
     CACHE 1;
-ALTER TABLE public.rdbm_history_id_seq OWNER TO $USER;
+ALTER TABLE public.rdbm_history_id_seq OWNER TO postgres;
 ALTER SEQUENCE public.rdbm_history_id_seq OWNED BY public.rdbm_history.id;
 ALTER TABLE ONLY public.rdbm_history
     ADD CONSTRAINT rdbm_history_pkey PRIMARY KEY (id);
