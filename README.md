@@ -14,16 +14,17 @@ Every usecase perform migration and YAML & SQL dump to compare with expected res
 2. [Create DB](examples/createdb/) Test Create User(role) and Database on demand.
 3. [Simple migration](examples/simple/) Simple migration with tracking versioned YAML and SQL script
 4. [Versioned YAML schemas migration](examples/schemas/) Multiple YAML scripts with limit by defining target version 
+5. [Versioned SQL migration](examples/versions/) Multiple SQL scripts with limit by defining target version 
 
    comming soon...
  
-5. [Versioned migration](examples/versions/) Multiple SQL scripts with limit by defining target version 
-6. [StoredProc](examples/storedproc/) Repeatable migration 
-7. [Tag and Status](examples/tag/)
-8. [Simple ETL](examples/simpleetl/)
-9. [ETL: mixes SQL and CSV](examples/etl/)
-10. [Dry Run](examples/dryrun/)
-11. [Log DB](examples/logdb/)  Copy Deploment history journal to another DB
+6. [StoredProc](examples/sp/) Repeatable migration 
+7. [Complex](examples/complex/) Mixed YAML Schemas, SQL, Triggers and Pre Deploy SQL
+8. [Tag and User](examples/tag/) Add tagging and user info into migration
+9. [Simple ETL](examples/simpleetl/) Simple example of Extract (Transform) Load data with the schema migration
+10. [ETL: mixes SQL and CSV](examples/etl/) Mixing data sourcing from plain SQL and CSV
+11. [Dry Run](examples/dryrun/) Show generated SQL code without real execution
+12. [Log DB](examples/logdb/)  Copy Deployment history journal to another DB
 
 Get a list of all available test cases:
 ```bash

@@ -11,7 +11,7 @@ if [ $# -lt 1 ]; then
   exit 1
 fi
 
-#if [ ! -d "examples/$1/test.sh" ]; then
+cd $(dirname $0)
 if [ ! -f "examples/$1/test.sh" ]; then
   echo "examples/$1 is not a valid test case directory"
   exit 1
@@ -38,7 +38,6 @@ if [ -n "$alreadystarted" ]; then
   docker rm $alreadystarted
 fi
 
-cd $(dirname $0)
 cp -t examples/$1 rdbm evaluation.license
 
 containerid=$(docker run --name rumba-test -v $(pwd)/examples/$1:/home/test -i -d -e POSTGRES_PASSWORD=pwd postgres)
@@ -49,7 +48,7 @@ cid=${containerid:0:12}
 
 echo ""
 echo "Executing test cases from examples/$0 ..."
-docker exec -it rumba-test bash -e /home/test/test.sh
+docker exec -it rumba-test bash -e /home/test/test.sh  || (echo FAILED TEST: $1 && exit 1)
 
 
 echo ""
