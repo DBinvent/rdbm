@@ -2,7 +2,7 @@
 cd $(dirname $0)
 
 echo
-echo "Create new DB and Deploying a history table into it:> /rdbm -c test.cfg prepare; using configuration:"
+echo "Create new DB and Deploying a history table into it:> rdbm -c test.cfg prepare; using configuration:"
 cat test.cfg
 ./rdbm -c test.cfg prepare
 
