@@ -1,4 +1,6 @@
-CREATE TABLE public.rdbm_history (
+CREATE SCHEMA rumba;
+ALTER SCHEMA rumba OWNER TO postgres;
+CREATE TABLE rumba.sql_history (
     id integer NOT NULL,
     source character varying(250) NOT NULL,
     target character varying(250),
@@ -17,15 +19,15 @@ CREATE TABLE public.rdbm_history (
     times integer DEFAULT 1 NOT NULL,
     size bigint DEFAULT 0 NOT NULL
 );
-ALTER TABLE public.rdbm_history OWNER TO postgres;
-CREATE SEQUENCE public.rdbm_history_id_seq
+ALTER TABLE rumba.sql_history OWNER TO postgres;
+CREATE SEQUENCE rumba.sql_history_id_seq
     AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
     NO MAXVALUE
     CACHE 1;
-ALTER TABLE public.rdbm_history_id_seq OWNER TO postgres;
-ALTER SEQUENCE public.rdbm_history_id_seq OWNED BY public.rdbm_history.id;
-ALTER TABLE ONLY public.rdbm_history
-    ADD CONSTRAINT rdbm_history_pkey PRIMARY KEY (id);
+ALTER TABLE rumba.sql_history_id_seq OWNER TO postgres;
+ALTER SEQUENCE rumba.sql_history_id_seq OWNED BY rumba.sql_history.id;
+ALTER TABLE ONLY rumba.sql_history
+    ADD CONSTRAINT sql_history_pkey PRIMARY KEY (id);

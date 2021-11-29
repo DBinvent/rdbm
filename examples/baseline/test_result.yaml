@@ -1,10 +1,10 @@
 ---
 database:
-  - schemaName: public
+  - schemaName: rumba
     owner: postgres
     tables:
       - table:
-          tableName: rdbm_history
+          tableName: sql_history
           columns:
             - column:
                 name: id
