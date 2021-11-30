@@ -13,18 +13,38 @@ Every usecase perform migration and YAML & SQL dump to compare with expected res
 1. [Baseline](examples/baseline/)  Test license and perform a self migration.
 2. [Create DB](examples/createdb/) Test Create User(role) and Database on demand.
 3. [Simple migration](examples/simple/) Simple migration with tracking versioned YAML and SQL script
-4. [Versioned YAML schemas migration](examples/schemas/) Multiple YAML scripts with limit by defining target version 
-5. [Versioned SQL migration](examples/versions/) Multiple SQL scripts with limit by defining target version 
+4. [Versioned YAML schemas migration](examples/schemas/) Multiple YAML scripts with staged migration 
+5. [Versioned SQL migration](examples/versions/) Multiple SQL scripts with staged migration 
+6. [StoredProc](examples/sp/) Repeatable migration useful for Stored Procedures or Function 
 
    comming soon...
  
-6. [StoredProc](examples/sp/) Repeatable migration 
 7. [Complex](examples/complex/) Mixed YAML Schemas, SQL, Triggers and Pre Deploy SQL
 8. [Tag and User](examples/tag/) Add tagging and user info into migration
-9. [Simple ETL](examples/simpleetl/) Simple example of Extract (Transform) Load data with the schema migration
-10. [ETL: mixes SQL and CSV](examples/etl/) Mixing data sourcing from plain SQL and CSV
-11. [Dry Run](examples/dryrun/) Show generated SQL code without real execution
+9. [Dry Run](examples/dryrun/) Show generated SQL code without real execution
+10. [Simple ETL](examples/simpleetl/) Simple example of Extract (Transform) Load data with the schema migration
+11. [ETL: mixes SQL and CSV](examples/etl/) Mixing data sourcing from plain SQL and CSV
 12. [Log DB](examples/logdb/)  Copy Deployment history journal to another DB
+
+## File naming convention:
+
+`[Type][Version]__script_name.[yaml|sql|csv]`
+1. Type - Single Capital Letter one of: P,S,V,R,D or 'a' for 'after'
+2. Version - one or more digits number divided by _, which will be replaced to dot. Ex: 1_2 will be 1.2.0
+3. The script name - any meanfil name of the script file
+4. Type: yaml, sql or csv 
+
+## File type execution order:
+
+1. P - The PreDeploy SQL is to be executed before (S)chema YAML.
+2. S - The Schema YAML will try to scan an information DB and apply changes required.
+3. V - The Version SQL is intended to be a major set of files for DB upgrade and will be executed only one time and be stored into a history log table.
+4. R - The Re-runnable SQL is very useful for handling stored procedure upgrades and with a '--script_tag' is very easily trackable.
+The file type 'D' for data in CSV format deployed as a part of S by defingn the file in YAML. See [ETL](examples/etl/)
+
+
+See for more [details](https://www.dbinvent.com/rdbm/guide/script-versions-and-types) 
+
 
 Get a list of all available test cases:
 ```bash
