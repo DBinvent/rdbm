@@ -16,10 +16,10 @@ Every usecase perform migration and YAML & SQL dump to compare with expected res
 4. [Versioned YAML schemas migration](examples/schemas/) Multiple YAML scripts with staged migration 
 5. [Versioned SQL migration](examples/versions/) Multiple SQL scripts with staged migration 
 6. [StoredProc](examples/sp/) Repeatable migration useful for Stored Procedures or Function 
+7. [Complex](examples/complex/) Mixed YAML Schemas, SQL, Triggers and Pre Deploy SQL
 
    comming soon...
  
-7. [Complex](examples/complex/) Mixed YAML Schemas, SQL, Triggers and Pre Deploy SQL
 8. [Tag and User](examples/tag/) Add tagging and user info into migration
 9. [Dry Run](examples/dryrun/) Show generated SQL code without real execution
 10. [Simple ETL](examples/simpleetl/) Simple example of Extract (Transform) Load data with the schema migration

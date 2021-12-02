@@ -1,0 +1,41 @@
+# DB schema definition in easy readable YAML format will autogenerate SQL on demand
+database:
+  - schema:
+    schemaName: test_schema
+    owner: postgres
+    tables:
+      - table:
+          tableName: test_table
+          description: Test table
+          columns:
+            - column:
+                name: id
+                type: serial
+                constraint:
+                  primaryKey: true
+                  nullable: false
+                description: Primary Key
+            - column:
+                name: test
+                type: varchar(250)
+            - column:
+                name: uuid
+                type: UUID
+                defaultValue: uuid_generate_v4()
+                constraint:
+                  nullable: false
+              # any additional SQL syntax appending column create
+                sql: UNIQUE
+            - column:
+                name: updated_at
+                type: timestamp
+          triggers:
+            - trigger:
+  #              name: uniq_name_of_trigger
+                name: tr_ts_tt_updated_at
+                event: before update
+                when: for each row
+                proc: set_updated_at()
+          # any additional SQL syntax appending table create https://www.postgresql.org/docs/current/sql-createtable.html
+          sql: tablespace pg_default
+
