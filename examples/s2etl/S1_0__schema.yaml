@@ -1,0 +1,41 @@
+database:
+  - schema:
+    schemaName: test_schema
+    owner: postgres
+    tables:
+      - table:
+          tableName: test_table
+          columns:
+            - column:
+                name: id
+                type: serial
+                constraint:
+                  primaryKey: true
+                  nullable: false
+            - column:
+                name: test
+                type: varchar(250)
+            - column:
+                name: tr
+                type: int
+                constraint:
+                  foreignKey:
+                    references: test_ref_table
+          etl:
+            file: D1__test.csv
+
+      - table:
+          tableName: test_ref_table
+          columns:
+            - column:
+                name: id
+                type: serial
+                defaultValue:
+                constraint:
+                  primaryKey: true
+                  nullable: false
+            - column:
+                name: test
+                type: varchar(20)
+          etl:
+            file: D1__test_ref.csv

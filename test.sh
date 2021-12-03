@@ -29,7 +29,7 @@ else
 fi
 
 echo "Starting Postgres in the Docker container..."
-docker pull postgres
+#docker pull postgres
 
 alreadystarted=$(docker ps -a -f "name=rumba-test" -q)
 if [ -n "$alreadystarted" ]; then
