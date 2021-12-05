@@ -11,7 +11,6 @@ database:
                 type: serial
                 constraint:
                   primaryKey: true
-                  nullable: false
             - column:
                 name: test
                 type: varchar(250)

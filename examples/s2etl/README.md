@@ -1,6 +1,6 @@
 # Rumba[rdbm] test case: Simple ETL part 2
 
-Deploying two tables with data
+Deploying two tables with data linked by reference key
 
 ```
 ../test.sh s2etl

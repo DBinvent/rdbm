@@ -6,6 +6,20 @@ Rumba is a database schema migration tool for PostgreSQL that helps manage, cont
 
 It employs the automatic SQL generation and plain-SQL approach in one software. Scripts can be assigned with a version and a certain migration phase, which brings developers true flexibility to perform the action at an exact migration stage. 
 
+## Key features:
+
+ - create database and user if absent
+ - use both: schema/table definition and script execution tracking
+ - simple ETL for extraction on snapshot AND do load data on migration
+ - support separate db connection for history table as a remote copy or primary one
+ - use psql client for script execution, include native psql script support with transaction control
+ - no JVM nor Python required to run
+ - lightweight (just about 10MB) with apt repo to stay updated
+ - transactional changes with rollback OR use configurable non-transactional mode
+ - dry run and diff with existing DB
+ - free personal license
+
+
 Every usecase perform migration and YAML & SQL dump to compare with expected result. 
 
 ## Usecases:
@@ -17,14 +31,16 @@ Every usecase perform migration and YAML & SQL dump to compare with expected res
 5. [Versioned SQL migration](examples/versions/) Multiple SQL scripts with staged migration 
 6. [StoredProc](examples/sp/) Repeatable migration useful for Stored Procedures or Function 
 7. [Complex](examples/complex/) Mixed YAML Schemas, SQL, Triggers and Pre Deploy SQL
-8. Simple example of ETL: Extract (Transform) Load: [1](examples/s1etl/), [2](examples/s2etl/), [3 ](examples/s3etl/) with the schema migration
+8. Simple example of ETL: Extract (Transform) Load: [1](examples/s1etl/), [2](examples/s2etl/), [3](examples/s3etl/) with the schema migration
+9. [Tag and User](examples/tag/) Add tagging and user info into migration
 
    comming soon...
  
-9. [Tag and User](examples/tag/) Add tagging and user info into migration
 10. [Dry Run](examples/dryrun/) Show generated SQL code without real execution
 11. [ETL: mixes SQL and CSV](examples/etl/) Mixing data sourcing from plain SQL and CSV
 12. [Log DB](examples/logdb/)  Copy Deployment history journal to another DB
+13. [URL](examples/url/) Use single param DB_URL for a connection configuration
+14. [ENV](examples/env/) Use environment variables override
 
 ## File naming convention:
 

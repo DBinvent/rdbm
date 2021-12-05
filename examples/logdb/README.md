@@ -8,6 +8,10 @@ Main goal is a copy history data to a secondary database.
 
 4. PG_Dump schema in SQL and compare results 
 
+How separate log DB is useful:
+1. split access to DB 
+2. copy without additional effort
+
 
 ```
 ../test.sh logdb

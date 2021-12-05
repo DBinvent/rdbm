@@ -1,0 +1,8 @@
+step() {
+ echo
+ printf '=%.0s' {1..12}
+ echo
+ echo "|  STEP $1  |"
+ printf '=%.0s' {1..12}
+ echo
+}

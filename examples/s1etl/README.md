@@ -1,7 +1,9 @@
 # Rumba[rdbm] test case: Simple ETL part 2
 
 
-Deploying table with data
+Deploying table with data.
+
+There is no PK on csv file, but on table
 
 ```
 ../test.sh s1etl

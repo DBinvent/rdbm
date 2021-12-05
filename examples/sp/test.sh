@@ -1,9 +1,9 @@
 #!/bin/bash
 cd $(dirname $0)
+source ./bashsrc
 
-echo
-echo STEP#1
-echo
+step 1
+
 echo "deploying first version of a store proc code :> rdbm -c test.cfg migrate; with params:"
 cat test.cfg
 cp sp_first.sql R1__sp.sql
@@ -16,9 +16,8 @@ psql -t -h localhost -U postgres -c "select test_sp()" > test1_result.out.txt
 echo "Compare results: diff original vs output"
 diff -B test1_result.txt test1_result.out.txt
 
-echo
-echo STEP#2
-echo
+step 1
+
 echo "Assume the code changed: apply by override previous file:> cp r1__sp_updated.sql R1__sp.sql "
 cp sp_second.sql R1__sp.sql
 echo "deploying second version of a store proc code (same migration version) :> rdbm -c test.cfg migrate; with params:"

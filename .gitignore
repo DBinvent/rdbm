@@ -6,3 +6,4 @@
 **/*.out.*
 **/*.org.*
 /examples/sp/R1__sp.sql
+/examples/*/bashsrc

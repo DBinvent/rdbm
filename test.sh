@@ -38,7 +38,7 @@ if [ -n "$alreadystarted" ]; then
   docker rm $alreadystarted
 fi
 
-cp -t examples/$1 rdbm evaluation.license
+cp -t examples/$1 rdbm evaluation.license bashrc bashsrc
 
 containerid=$(docker run --name rumba-test -v $(pwd)/examples/$1:/home/test -i -d -e POSTGRES_PASSWORD=pwd postgres)
 sleep 3

@@ -1,8 +1,9 @@
 #!/bin/bash
 cd $(dirname $0)
-echo
-echo STEP#1
-echo
+source ./bashsrc
+
+step 1
+
 echo "deploying up to version 1:> rdbm -c test.cfg --target=1 migrate; with params:"
 cat test.cfg
 ./rdbm -c test.cfg --target=1 migrate
@@ -23,9 +24,8 @@ pg_dump -s -h localhost -U postgres | grep -Ev "\-\-|SET|COMMENT ON|pg_catalog.s
 echo "Compare SQL results: diff original vs output"
 diff -B test1_result.sql test1_result.out.sql
 
-echo
-echo STEP#2
-echo
+step 2
+
 echo "deploying up to version 2:> rdbm -c test.cfg  --target=2 migrate; with params:"
 cat test.cfg
 ./rdbm -c test.cfg --target=2 migrate
