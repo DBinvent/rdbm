@@ -1,0 +1,17 @@
+database:
+  - schema:
+    schemaName: test_schema
+    owner: postgres
+    tables:
+      - table:
+          tableName: test_table
+          columns:
+            - column:
+                name: id
+                type: serial
+                constraint:
+                  primaryKey: true
+                  nullable: false
+            - column:
+                name: test
+                type: varchar(20)
