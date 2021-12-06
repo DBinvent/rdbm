@@ -3,12 +3,12 @@
 Mixed YAML Schemas, SQL, Repeatable StoredProc and Pre deploy SQL
 
 ```
-../test.sh versions
+../test.sh complex
 
 ```
 OR to keep console open for manual checkup
 ```
-../test.sh versions psql
+../test.sh complex psql
 
 ```
 
