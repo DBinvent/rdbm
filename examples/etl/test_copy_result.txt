@@ -1,0 +1,5 @@
+  2 | copy: second | 
+  3 | copy: third  | 'NULL'
+  4 | copy: 4444   | 4444
+  5 | copy: extra  | extra_ref
+

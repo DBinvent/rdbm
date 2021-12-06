@@ -31,31 +31,31 @@ Every usecase perform migration and YAML & SQL dump to compare with expected res
 5. [Versioned SQL migration](examples/versions/) Multiple SQL scripts with staged migration 
 6. [StoredProc](examples/sp/) Repeatable migration useful for Stored Procedures or Function 
 7. [Complex](examples/complex/) Mixed YAML Schemas, SQL, Triggers and Pre Deploy SQL
-8. Simple example of ETL: Extract (Transform) Load: [1](examples/s1etl/), [2](examples/s2etl/), [3](examples/s3etl/) with the schema migration
-9. [Tag and User](examples/tag/) Add tagging and user info into migration
+8. Simple example of ETL: Extract-Transform-Load: [1](examples/s1etl/), [2](examples/s2etl/), [3](examples/s3etl/) with the schema migration
+9. [ETL: mixes SQL and CSV](examples/etl/) Mixing data sourcing from plain SQL and CSV
+10. [Tag and User](examples/tag/) Add tagging and user info into migration
 
-   comming soon...
+    comming soon...
  
-10. [Dry Run](examples/dryrun/) Show generated SQL code without real execution
-11. [ETL: mixes SQL and CSV](examples/etl/) Mixing data sourcing from plain SQL and CSV
+11. [Dry Run](examples/dryrun/) Show generated SQL code without real execution
 12. [Log DB](examples/logdb/)  Copy Deployment history journal to another DB
 13. [URL](examples/url/) Use single param DB_URL for a connection configuration
 14. [ENV](examples/env/) Use environment variables override
 
 ## File naming convention:
 
-`[Type][Version]__script_name.[yaml|sql|csv]`
+`[Type][Version]__[script_name].[yaml|sql|csv]`
 1. Type - Single Capital Letter one of: P,S,V,R,D or 'a' for 'after'
 2. Version - one or more digits number divided by _, which will be replaced to dot. Ex: 1_2 will be 1.2.0
 3. The script name - any mean-full name of the script file
-4. Type: yaml, sql or csv 
+4. File type: yaml, sql or csv 
 
 ## File type execution order:
 
 1. P - The PreDeploy SQL is to be executed before (S)chema YAML.
 2. S - The Schema YAML will try to scan an information DB and apply changes required. The 'D' type will be executed there as well -- see bellow.
 3. V - The Version SQL is intended to be a major set of files for DB upgrade and will be executed only one time and be stored into a history log table.
-4. R - The Re-runnable SQL is very useful for handling stored procedure upgrades and with a '--script_tag' is very easily trackable.
+4. R - The Re-runnable (mutable) SQL is very useful for handling stored procedure upgrades, and with a '--script_tag' is easily trackable.
 The file type 'D' for data in CSV format deployed as a part of S by define the file in YAML. See [ETL](examples/etl/)
 
 

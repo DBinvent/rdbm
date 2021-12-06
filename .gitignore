@@ -6,5 +6,6 @@
 **/*.out.*
 **/*.org.*
 /examples/sp/R1__sp.sql
+/examples/etl/D1__test_schema_test_copy.csv
 /examples/*/bashrc
 /examples/*/bashsrc
