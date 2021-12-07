@@ -34,10 +34,10 @@ Every usecase perform migration and YAML & SQL dump to compare with expected res
 8. Simple example of ETL: Extract-Transform-Load: [1](examples/s1etl/), [2](examples/s2etl/), [3](examples/s3etl/) with the schema migration
 9. [ETL: mixes SQL and CSV](examples/etl/) Mixing data sourcing from plain SQL and CSV
 10. [Tag and User](examples/tag/) Add tagging and user info into migration
+11. [Dry Run](examples/dryrun/) Show generated SQL code without real execution
 
     comming soon...
  
-11. [Dry Run](examples/dryrun/) Show generated SQL code without real execution
 12. [Log DB](examples/logdb/)  Copy Deployment history journal to another DB
 13. [URL](examples/url/) Use single param DB_URL for a connection configuration
 14. [ENV](examples/env/) Use environment variables override
