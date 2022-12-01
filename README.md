@@ -2,6 +2,12 @@
 
 Here you will see a set of scripts that demonstrate usage of Rumba[[rdbm]](https://www.dbinvent.com/rdbm/) by [DBinvent](https://www.linkedin.com/company/dbinvent).
 
+The examples show most typical use cases and are written to run in a Docker container. You can also use them as a starting point to adopt Rumba into your workflow quickly and without touching Docker at all.
+
+Before we move on to running tests, let's briefly describe the main Rumba features.
+
+## About Rumba RDBM
+
 Rumba is a database schema migration tool for PostgreSQL that helps manage, control and deploy database schema changes across various environments and development stages.
 
 It employs the automatic SQL generation and plain-SQL approach in one software. Scripts can be assigned with a version and a certain migration phase, which brings developers true flexibility to perform the necessary action at an exact migration stage.
@@ -61,33 +67,47 @@ Versioned scripts, schema files and data files for ETL operations follow simple 
 6. `A` - _**A**fter_ migration scripts. Run after all the scripts of the same version or at the end of all migrations. Allowed names are after.sql and after_each.sql
 
 
-See for more [details](https://www.dbinvent.com/rdbm/guide/script-versions-and-types) 
+## Running the examples
 
+To run the examples, you need the [Docker installed](https://docs.docker.com/get-docker/).
 
-Get a list of all available test cases:
-```bash
-./test.sh 
+Clone this repository:
 
+```shell
+git clone https://github.com/DBinvent/rdbm.git
 ```
 
+Then cd to rdbm folder:
 
-## Run a test case within a Docker container:
-```bash
-./test.sh baseline # or any other usecase your prefer to run
-
+```shell
+cd rdbm
 ```
 
-## Run a test case and keep it open with Postgres client:
-```bash
+Now you are ready to run examples, one-by-one or all at once. To get the list of all available test cases:
+
+```shell
+./test.sh
+```
+
+### Running a specific example
+
+```shell
+./test.sh baseline # or any other name from the list displayed by ./test.sh
+```
+
+### Running an example and keeping psql prompt open
+
+If you're interested in examining the resulting schema or history table content, it can be useful to keep the psql prompt after the example is completed.
+
+```shell
 ./test.sh baseline psql
-
 ```
-So, you can check generated tables and history journal.
 
-## Run a test case and keep it open with Bash client:
-```bash
+### Running an example and keeping bash prompt open
+
+You can play with preconfigured rdbm application in the launched Docker container.
+
+```shell
 ./test.sh baseline bash
-
 ```
-Very useful to play with preconfigured rdbm app. Try: rdbm help
 
