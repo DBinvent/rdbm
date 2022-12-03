@@ -1,6 +1,6 @@
-# DB schema definition in easy readable YAML format will autogenerate SQL on demand
+# Declarative database schema definition in an easy to read YAML format will produce the corresponding SQL code on the fly
 
-# no changes from V1, so nothing will be updated
+# At this particular case, there are no schema changes from V1, so nothing will be updated
 database:
   - schema:
     schemaName: test_schema

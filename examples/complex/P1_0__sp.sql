@@ -1,4 +1,6 @@
--- Pre Schema migration - usefull to create object use on YAML schema, such as store proc
+-- P-files are executed before the schema has been changed.
+-- They are useful to create objects used by the schema defined in YAML files, such as:
+-- stored procedures, function, extensions etc.
 
 CREATE OR REPLACE FUNCTION set_updated_at() RETURNS trigger AS $$
 BEGIN
