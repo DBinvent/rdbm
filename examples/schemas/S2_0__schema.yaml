@@ -1,3 +1,6 @@
+# Declarative database schema definition in an easy to read YAML format will produce the corresponding SQL code on the fly
+
+# Schema version 2
 database:
   - schema:
     schemaName: test_schema
@@ -6,12 +9,13 @@ database:
       - table:
           tableName: test_ref_table
           columns:
-# we can just append column definition, OR show all field here
+          # Here we add a new column to v.1
+          # You can copy the columns from the previous version or just type the new columns here
             - column:
                 name: extra
                 type: varchar(250)
 
-# as an example: this table has no changes:
+      # This table has no changes in v.2:
       - table:
           tableName: test_table
           columns:

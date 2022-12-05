@@ -1,3 +1,4 @@
+# Declarative database schema definition in an easy to read YAML format will produce the corresponding SQL code on the fly
 database:
   - schema:
     schemaName: test_schema

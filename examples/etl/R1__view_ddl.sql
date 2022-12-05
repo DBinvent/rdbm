@@ -1,3 +1,5 @@
+-- R-files are repeatable scripts, run after the incoming migration makes the changes.
+
 create OR replace view vw_test_snapshot as
 select tt.id, 'copy: '|| tt.test as test, tr.test as ref_test from test_schema.test_table tt
 --left outer

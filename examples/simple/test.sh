@@ -6,17 +6,17 @@ cat test.cfg
 ./rdbm -c test.cfg migrate
 
 echo
-echo "Dumping schema in YAML format:> rdbm -c test.cfg snapshot"
+echo "Dumping schema into YAML file:> rdbm -c test.cfg snapshot"
 ./rdbm -c test.cfg snapshot > test_result.out.yaml
 
-echo "Compare YAML results: diff original vs output"
+echo "Comparing YAML files: diff output vs expected"
 diff -B test_result.yaml test_result.out.yaml
 
 echo
-echo "Dumping schema in SQL format:>  pg_dump -s -h "
+echo "Dumping schema into SQL file:>  pg_dump -s -h "
 pg_dump -s -h localhost -U postgres | grep -Ev "\-\-|SET|COMMENT ON|pg_catalog.set_config" > test_result.out.sql
 
-echo "Compare SQL results: diff original vs output"
+echo "Comparing SQL files: diff output vs expected"
 diff -B test_result.sql test_result.out.sql
 
 chmod a+rw *

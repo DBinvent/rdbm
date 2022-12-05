@@ -1,18 +1,19 @@
-# Rumba[rdbm] test case: Store Procedure
+# Stored procedure
 
-Using repeatable migration to handle DB based code, like Stored Procedures updated by Source control lit git.
+This test case is demonstrating [repeatable scripts](https://www.dbinvent.com/rdbm/guide/script-versions-and-types) execution on every performed migration.
 
-This test case demonstrate the same migration version but changing SP code.  
+Initially, it performs schema migration that creates a stored procedure with ‘first’ string in its code. Then it simulates the procedure source code changes by replacing the file and repeats the migration again.
 
-The code not limited to be a function but any type of script which is correct for repeatable execution on the same database.
+Rumba RDBM detects the changes by comparing the current file hash with its previous value from the history table and runs the changed repeatable script.
 
-```
+## Running the test
+
+```shell
 ../test.sh sp
+```
 
-```
-OR to keep console open for manual checkup
-```
+If you're interested in examining the resulting schema or history table content, it can be useful to keep the psql prompt after the example is completed.
+
+```shell
 ../test.sh sp psql
-
 ```
-

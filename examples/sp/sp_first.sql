@@ -1,6 +1,8 @@
 CREATE OR REPLACE function test_sp() RETURNS  varchar AS $$
 BEGIN
--- the best practice is to put comments the ticket number, version or any information about the code
-    return 'The First Version of a Code';
+    -- Hint: The best practice is to put comments, ticket number, version or any information about the code
+
+    -- Here we return a 'first' string and will change it to the 'second' in the next script version
+    return 'The First Version of Code';
 END;
 $$ LANGUAGE plpgsql;

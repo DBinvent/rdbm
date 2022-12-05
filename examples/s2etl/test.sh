@@ -2,7 +2,7 @@
 cd $(dirname $0)
 
 echo
-echo "Deploying tables with data :> rdbm -c test.cfg migrate; with params:"
+echo "Creating tables, loading data from the external files :> rdbm -c test.cfg migrate; with params:"
 cat test.cfg
 ./rdbm -c test.cfg migrate
 

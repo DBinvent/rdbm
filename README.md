@@ -35,7 +35,7 @@ The use cases perform database schema migrations and make some dumps. Then the p
 4. [Versioned, schema in YAML files](examples/schemas/) - Sample of declarative schema definition in YAML files, version 1 to version 2 migration.
 5. [Versioned, schema in SQL scripts](examples/versions/) - Plain-SQL way to migrate database schema.
 6. [Stored procure](examples/sp/) - Repeatable scripts execution on every migration, useful for stored procedures and functions.
-7. [Complex](examples/complex/) - Mixing declarative schema definition in YAML files with plain-SQL scripts, triggers and _before schema generation_ SQL script.
+7. [Mixing SQL with YAML](examples/sql-and-yaml/) - Mixing declarative schema definition in YAML files with plain-SQL scripts, triggers and _before schema generation_ SQL script.
 8. Simple examples of **E**xtract-**T**ransform-**L**oad operations: [1](examples/s1etl/), [2](examples/s2etl/), [3](examples/s3etl/)
 9. [ETL: mixes SQL and CSV](examples/etl/) - Mixing data sourcing from SQL and CSV files.
 10. [Tag and User](examples/tag/) - Tagging migration and run it under a specific user.

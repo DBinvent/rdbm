@@ -1,12 +1,9 @@
-# Rumba[rdbm] test case: Use single DB_URL for connect  
+# Connection URI
 
-Main goal is to connect and perform a self migration use single url.
+This test case is demonstrating how to use [Connection URI](https://www.postgresql.org/docs/current/libpq-connect.html) in a single `db_url` param rather than providing several params such us: `db_host`, `db_name`, `db_user` and `db_password` in the configuration file.
 
-https://www.postgresql.org/docs/current/libpq-connect.html
+## Running the test
 
-
+```shell
+../test.sh url
 ```
-../test.sh url 
-
-```
-

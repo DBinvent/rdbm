@@ -1,3 +1,5 @@
+# Declarative database schema definition in an easy to read YAML format will produce the corresponding SQL code on the fly
+
 database:
   - schema:
     schemaName: test_schema
@@ -6,8 +8,8 @@ database:
       - table:
           tableName: test_table
           description: The new table
-          constraint: -- some SQL as table constraint
-          sql: -- some SQL suffix on table create
+          constraint: -- Сonstraints like primaryKey, nullable etc
+          sql: -- Some SQL related to CREATE TABLE
           columns:
             - column:
                 name: id
@@ -18,9 +20,9 @@ database:
                   nullable: false
                   foreignKey:
                     references: --fk_table
-                    sql: -- some SQL suffix on new FK create, like- on delete no action on update no action
+                    sql: -- Сonstraint-related like ON DELETE, NO ACTION, ON UPDATE etc.
                 description:
-                sql: -- some SQL suffix on new column create
+                sql: -- Сolumn-related things like UNIQUE
             - column:
                 name: test
                 type: varchar(250)

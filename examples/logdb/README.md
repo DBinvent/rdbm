@@ -1,25 +1,15 @@
-# Rumba[rdbm] test case: LogDB 
+# Remote history database
 
-Main goal is a copy history data to a secondary database.
+This test case is demonstrating how to set up mirroring migration history table into an external database. The local history table always exists. However, having an external copy may be useful if you need to grant access to migration history only or just make a copy without any additional effort.  
 
-2. Perform migration
+## Running the test
 
-3. Dump schema in YAML and compare results 
-
-4. PG_Dump schema in SQL and compare results 
-
-How separate log DB is useful:
-1. split access to DB 
-2. copy without additional effort
-
-
-```
+```shell
 ../test.sh logdb
+```
 
-```
-OR to keep console open for manual checkup
-```
+If you're interested in examining the resulting schema or history table content, it can be useful to keep the psql prompt after the example is completed.
+
+```shell
 ../test.sh logdb psql
-
 ```
-

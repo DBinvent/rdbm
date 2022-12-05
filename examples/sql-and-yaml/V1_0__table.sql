@@ -1,5 +1,4 @@
--- V-files are immutable SQL scripts. They're run once and their checksums are stored in the history table.
--- Usually we use them when we can't use S-files in YAML format.
+-- V-files are immutable SQL scripts. They're run only once and their checksums are stored in the history table.
 -- Let's mix declarative schema definition in YAML files with direct manipulations from SQL scripts.
 
 ALTER TABLE test_schema.test_table
