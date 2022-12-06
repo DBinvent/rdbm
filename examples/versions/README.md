@@ -1,4 +1,4 @@
-# Two versions, SQL files
+# Schema in SQL scripts
 
 This test case is demonstrating initial database schema creation, then migration to the next schema version. Immutable [V-type](https://www.dbinvent.com/rdbm/guide/script-versions-and-types) SQL scripts are used.
 
