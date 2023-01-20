@@ -2,7 +2,7 @@
 
 This test case is demonstrating `createdb=yes` parameter usage to create a non-existing database.
 
-> Rumba RDBM accepts the configuration parameters from the command-line, configuration file, and environment variables. So, you can set parameters from `test.cfg` in different ways. Please read the [Configuration](https://www.dbinvent.com/rdbm/guide/configuration) article to learn the details.
+> Schema Guard accepts the configuration parameters from the command-line, configuration file, and environment variables. So, you can set parameters from `test.cfg` in different ways. Please read the [Configuration](https://www.dbinvent.com/rdbm/guide/configuration) article to learn the details.
 
 ## Running the test
 

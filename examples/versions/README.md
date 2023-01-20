@@ -4,7 +4,7 @@ This test case is demonstrating initial database schema creation, then migration
 
 You can do the same by defining a declarative model in the mutable YAML files, here is [an example](https://github.com/DBinvent/rdbm/blob/main/examples/schemas).
 
-[Rumba RDBM](https://www.dbinvent.com/rdbm/) allows you to mix both: declarative schema model in YAML files and plain-SQL scripts. Please refer to [Mixing SQL with YAML](examples/sql-and-yaml) example.
+[Schema Guard](https://www.dbinvent.com/rdbm/) allows you to mix both: declarative schema model in YAML files and plain-SQL scripts. Please refer to [Mixing SQL with YAML](examples/sql-and-yaml) example.
 
 ## Running the test
 

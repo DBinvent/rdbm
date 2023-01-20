@@ -1,6 +1,6 @@
 #!/bin/bash
 if [ $# -lt 1 ]; then
-  echo "Run a test cases for Rumba[rdbm] in Postgres Docker container"
+  echo "Run a test cases for Schema Guard in Postgres Docker container"
   echo "Example: $0 baseline"
   echo ""
   echo "Available test cases:"
@@ -22,7 +22,7 @@ set -e
 if [ -f rdbm ]; then
   echo "Use $(rdbm -V)"
 else
-  echo "Pull Rumba[rdbm] from dbinvent.com"
+  echo "Pull Schema Guard from dbinvent.com"
   wget https://www.dbinvent.com/dist/rdbm-unix-latest.tar.gz
   tar xvf rdbm-unix-latest.tar.gz
   rdbm -V

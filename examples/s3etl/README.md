@@ -2,7 +2,7 @@
 
 This test case is demonstrating initial data load from CSV files in tables that have no relation set. [D-file's](https://www.dbinvent.com/rdbm/guide/script-versions-and-types) version number, in file names, set the insertion order.
 
-Initially, [Rumba RDBM](https://www.dbinvent.com/rdbm/) generates and executes the SQL commands to create the schema described in YAML file, then proceeds to the files from the `etl:` section.
+Initially, [Schema Guard](https://www.dbinvent.com/rdbm/) generates and executes the SQL commands to create the schema described in YAML file, then proceeds to the files from the `etl:` section.
 
 ## Running the test
 

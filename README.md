@@ -1,14 +1,14 @@
-# Examples of using Rumba[rdbm]
+# Examples of using Schema Guard
 
-Here you will see a set of scripts that demonstrate usage of Rumba[[rdbm]](https://www.dbinvent.com/rdbm/) by [DBinvent](https://www.linkedin.com/company/dbinvent).
+Here you will see a set of scripts that demonstrate usage of Schema Guard [[rdbm]](https://www.dbinvent.com/rdbm/) by [DBinvent](https://www.linkedin.com/company/dbinvent).
 
-The examples show most typical use cases and are written to run in a Docker container. You can also use them as a starting point to adopt Rumba into your workflow quickly and without touching Docker at all.
+The examples show most typical use cases and are written to run in a Docker container. You can also use them as a starting point to adopt Schema Guard into your workflow quickly and without touching Docker at all.
 
-Before we move on to running tests, let's briefly describe the main Rumba features.
+Before we move on to running tests, let's briefly describe the main Schema Guard features.
 
-## About Rumba RDBM
+## About Schema Guard
 
-Rumba is a database schema migration tool for PostgreSQL that helps manage, control and deploy database schema changes across various environments and development stages.
+Schema Guard is a database schema migration tool for PostgreSQL that helps manage, control and deploy database schema changes across various environments and development stages.
 
 It employs the automatic SQL generation and plain-SQL approach in one software. Scripts can be assigned with a version and a certain migration phase, which brings developers true flexibility to perform the necessary action at an exact migration stage.
 
@@ -60,7 +60,7 @@ Versioned scripts, schema files and data files for ETL operations follow simple 
 
 ## File types and execution order
 1. `P` - The _**P**re-deploy_ SQL scripts are executed before the schema is changed from S and V files.
-2. `S` - The next _**S**chema_ version in YAML format. Rumba computes the changes required and generates SQL commands on the fly. You can mix S and V files. See also D type.
+2. `S` - The next _**S**chema_ version in YAML format. Schema Guard computes the changes required and generates SQL commands on the fly. You can mix S and V files. See also D type.
 3. `D` - The _**D**ata_ files for ETL operations used in batch with the S-files. See [ETL](examples/etl/) example
 4. `V` - Transition to the next schema _**V**ersion_ in plain-SQL. Usually, the most-used file types. You can mix V and S files.
 5. `R` - The _**R**epeatable_ and mutable scripts, applied every time the schema is changed. Useful for stored procedures and functions.
