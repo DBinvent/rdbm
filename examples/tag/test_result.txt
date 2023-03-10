@@ -1,7 +1,7 @@
----
 dev:
   docker_db:
-    version: "1.2"
+    version: '1.2'
     successful: true
-    script_tag: "first deployment by [tag] ticket"
+    script_tag: first deployment by [tag] ticket
     executed_by: docker_test
+

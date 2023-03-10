@@ -1,98 +1,99 @@
----
 database:
-  - schemaName: public
-    owner: postgres
-    tables:
-      - table:
-          tableName: rdbm_history
-          columns:
-            - column:
-                name: id
-                type: serial
-                constraint:
-                  primaryKey: true
-                  nullable: false
-            - column:
-                name: source
-                type: varchar(250)
-                constraint:
-                  nullable: false
-            - column:
-                name: target
-                type: varchar(250)
-            - column:
-                name: source_type
-                type: bpchar
-                constraint:
-                  nullable: false
-            - column:
-                name: version
-                type: varchar(80)
-                constraint:
-                  nullable: false
-            - column:
-                name: created_on
-                type: timestamp
-                defaultValue: CURRENT_TIMESTAMP
-                constraint:
-                  nullable: false
-            - column:
-                name: checksum
-                type: varchar(80)
-            - column:
-                name: scheduled_on
-                type: timestamp
-            - column:
-                name: script_tag
-                type: varchar(80)
-            - column:
-                name: catalog
-                type: varchar(80)
-            - column:
-                name: executed_on
-                type: timestamptz
-            - column:
-                name: executed_by
-                type: varchar(80)
-            - column:
-                name: ok
-                type: bool
-                defaultValue: "false"
-                constraint:
-                  nullable: false
-            - column:
-                name: msg
-                type: varchar(250)
-            - column:
-                name: took_sec
-                type: int8
-                defaultValue: "0"
-                constraint:
-                  nullable: false
-            - column:
-                name: times
-                type: int4
-                defaultValue: "1"
-                constraint:
-                  nullable: false
-            - column:
-                name: size
-                type: int8
-                defaultValue: "0"
-                constraint:
-                  nullable: false
-  - schemaName: test_schema
-    owner: postgres
-    tables:
-      - table:
-          tableName: test_table
-          columns:
-            - column:
-                name: id
-                type: serial
-                constraint:
-                  primaryKey: true
-                  nullable: false
-            - column:
-                name: test
-                type: varchar(250)
+- schemaName: public
+  owner: postgres
+  tables:
+  - table:
+      tableName: rdbm_history
+      columns:
+      - column:
+          name: id
+          type: serial
+          constraint:
+            primaryKey: true
+            nullable: false
+      - column:
+          name: source
+          type: varchar(250)
+          constraint:
+            nullable: false
+      - column:
+          name: target
+          type: varchar(250)
+      - column:
+          name: source_type
+          type: bpchar
+          constraint:
+            nullable: false
+      - column:
+          name: version
+          type: varchar(80)
+          constraint:
+            nullable: false
+      - column:
+          name: created_on
+          type: timestamp
+          defaultValue: CURRENT_TIMESTAMP
+          constraint:
+            nullable: false
+      - column:
+          name: checksum
+          type: varchar(80)
+      - column:
+          name: scheduled_on
+          type: timestamp
+      - column:
+          name: script_tag
+          type: varchar(80)
+      - column:
+          name: catalog
+          type: varchar(80)
+      - column:
+          name: executed_on
+          type: timestamptz
+      - column:
+          name: executed_by
+          type: varchar(80)
+      - column:
+          name: ok
+          type: bool
+          defaultValue: 'false'
+          constraint:
+            nullable: false
+      - column:
+          name: msg
+          type: varchar(250)
+      - column:
+          name: took_sec
+          type: int8
+          defaultValue: '0'
+          constraint:
+            nullable: false
+      - column:
+          name: times
+          type: int4
+          defaultValue: '1'
+          constraint:
+            nullable: false
+      - column:
+          name: size
+          type: int8
+          defaultValue: '0'
+          constraint:
+            nullable: false
+      owner: postgres
+- schemaName: test_schema
+  owner: postgres
+  tables:
+  - table:
+      tableName: test_table
+      columns:
+      - column:
+          name: id
+          type: serial
+          constraint:
+            primaryKey: true
+            nullable: false
+      - column:
+          name: test
+          type: varchar(250)
+      owner: postgres
